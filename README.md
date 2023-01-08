@@ -8,4 +8,4 @@ The Main function takes two Tuples (start coordinates, end coordinates), e.g.:
 findPath([0, 0],[ 3, 3]);
 ```
 
-and returns the number of Steps it takes to get to from start to end coordinates.
+and returns the number of Steps it takes to get from start to end coordinates.
