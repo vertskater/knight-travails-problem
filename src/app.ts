@@ -3,12 +3,9 @@ import { addMove, addAllPossibleMoves } from "./modules/knightMoves.js";
 
 new Board();
 
-const findPath = (
-  startX: number,
-  startY: number,
-  endX: number,
-  endY: number
-) => {
+const findPath = (startXY: [number, number], endXY: [number, number]) => {
+  let [startX, startY] = startXY;
+  let [endX, endY] = endXY;
   addMove(startX, startY, 0);
   let index = 0;
   do {
@@ -17,4 +14,4 @@ const findPath = (
   return Board.board[endX][endY];
 };
 
-console.log(findPath(0, 0, 3, 3));
+console.log(findPath([3, 3], [4, 3]));
