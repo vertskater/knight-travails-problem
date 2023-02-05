@@ -60,4 +60,4 @@ class Knight {
 const knight = new Knight();
 const knightMove = knight.moves([3, 3], [0, 0]);
 console.log(`You made it in ${knightMove.length / 2} moves. Here is your Path: ${knightMove}`);
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=knight-moves.js.map

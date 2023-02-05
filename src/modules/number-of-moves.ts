@@ -15,6 +15,9 @@ const findPath = (startXY: [number, number], endXY: [number, number]) => {
 };
 
 console.log(findPath([3, 3], [4, 3])); */
+import { findWay } from "./modules/findWay.js";
+findWay();
+
 class Cell {
   constructor(public x: number, public y: number, public distance: number) {}
 }
@@ -54,7 +57,6 @@ function minStepsToReachTarget(
   let currentElementInQueue: Cell;
   const visit = cellUnvisited(size);
   visit[startX][startY] = true;
-  console.log(visit, knightStateQueue);
 
   while (knightStateQueue.length !== 0) {
     currentElementInQueue = knightStateQueue.shift()!;
@@ -67,8 +69,8 @@ function minStepsToReachTarget(
       x = currentElementInQueue.x + dx[i];
       y = currentElementInQueue.y + dy[i];
 
-      if (isInside(x, y, size) && !visit[x][y]) {
-        visit[x][y] = true;
+      if (isInside(x, y, size) && !visit[x - 1][y - 1]) {
+        visit[x - 1][y - 1] = true;
         knightStateQueue.push(
           new Cell(x, y, currentElementInQueue.distance + 1)
         );
@@ -78,4 +80,4 @@ function minStepsToReachTarget(
   return Number.MAX_VALUE;
 }
 
-console.log(minStepsToReachTarget([3, 3], [8, 8], 8));
+console.log(minStepsToReachTarget([1, 1], [8, 8], 8));
