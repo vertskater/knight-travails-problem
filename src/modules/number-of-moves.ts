@@ -15,7 +15,7 @@ const findPath = (startXY: [number, number], endXY: [number, number]) => {
 };
 
 console.log(findPath([3, 3], [4, 3])); */
-import { findWay } from "./modules/findWay.js";
+import { findWay } from "./findWay.js";
 findWay();
 
 class Cell {
